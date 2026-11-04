@@ -1,0 +1,49 @@
+users:
+  - developer
+  - explorer
+categories:
+  - fitness
+  - outdoors
+
+trees:
+  - id: trail_conditioning
+    title: "Trail & Bodyweight Conditioning"
+    description: "Build sustainable work capacity, mobility, and elevation endurance."
+    advice: "Consistency beats occasional high-intensity burnout. Log repetitions right after each session."
+    badge: "trail_conditioning.png"
+    rule: "all"
+    children:
+      - id: bodyweight_base
+        title: "Bodyweight Strength Base"
+        description: "Accumulate foundational pushing, pulling, and full-body conditioning reps."
+        advice: "Break large repetition targets into crisp, sub-maximal sets throughout the week."
+        badge: "strength_base.png"
+        rule: "all"
+        children:
+          - id: burpee_century
+            title: "100 Paced Burpees"
+            description: "Complete 100 cumulative burpees with controlled breathing and crisp plank form."
+            advice: "Step or jump back smoothly and focus on rhythmic nasal breathing at the top of each rep."
+            badge: "burpee_century.png"
+            target: 100
+
+          - id: mobility_sessions
+            title: "10 Mobility & Stretching Sessions"
+            description: "Complete 10 dedicated 15-minute hip, thoracic, and shoulder mobility sessions."
+            advice: "Pair mobility work with your evening wind-down routine."
+            badge: "mobility.png"
+            target: 10
+
+      - id: outdoor_endurance
+        title: "Elevation & Trail Readiness"
+        description: "Test gear and aerobic pacing on outdoor trails."
+        advice: "Start steep ascents at a conversational pace during the first 20 minutes."
+        badge: "outdoor_endurance.png"
+        rule: "all"
+        children:
+          - id: five_trail_rucks
+            title: "5 Daypack Trail Outings"
+            description: "Complete 5 outdoor hikes or rucks carrying water and essentials."
+            advice: "Log the route distance and elevation gain in your field notes."
+            badge: "trail_rucks.png"
+            target: 5

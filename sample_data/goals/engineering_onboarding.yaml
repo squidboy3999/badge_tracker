@@ -1,0 +1,54 @@
+users:
+  - developer
+  - team
+categories:
+  - architecture
+  - devops
+  - testing
+
+trees:
+  - id: clean_room_engineer
+    title: "Clean-Room Systems Architect"
+    description: "Build deterministic, containerized software with strict separation between pure domain logic and external I/O."
+    advice: "Keep your core logic 100% free of filesystem, network, or database imports so every state transition can be tested in milliseconds."
+    badge: "systems_architect.png"
+    rule: "all"
+    children:
+      - id: functional_core_design
+        title: "Functional Core Foundations"
+        description: "Model domain rules using immutable value objects and pure transformation functions."
+        advice: "Use frozen dataclasses or NamedTuples and return new instances rather than mutating state in place."
+        badge: "functional_core.png"
+        rule: "all"
+        children:
+          - id: immutable_models
+            title: "Immutable Domain Models"
+            description: "Define all core state structures with frozen dataclasses and strict type annotations."
+            advice: "Prefer tuples over lists inside frozen dataclasses so the entire object graph remains hashable and immutable."
+            badge: "immutable_models.png"
+
+          - id: pure_unit_tests
+            title: "25 Pure Unit Tests"
+            description: "Write 25 fast unit tests that exercise domain edge cases without mocks or temporary files."
+            advice: "If a test requires a mock, consider whether an I/O dependency leaked into the core module."
+            badge: "unit_tests.png"
+            target: 25
+
+      - id: container_workflow
+        title: "Rootless Container Workflow"
+        description: "Package the application for reproducible local development and automated testing."
+        advice: "Use SELinux :Z volume flags on rootless Podman bind mounts so the container process can read and write host files safely."
+        badge: "container_workflow.png"
+        rule: "any"
+        children:
+          - id: compose_dev_loop
+            title: "Live-Reload Compose Stack"
+            description: "Configure podman-compose with source volume mounts and hot-reload enabled."
+            advice: "Mount only src/, tests/, and data/ rather than the entire repository root to keep container layer permissions clean."
+            badge: "compose_stack.png"
+
+          - id: ci_pipeline_gate
+            title: "Automated Linter & Test Gate"
+            description: "Run ruff and pytest inside the container with zero warnings."
+            advice: "Fail the build early on formatting or type errors before running integration suites."
+            badge: "ci_gate.png"

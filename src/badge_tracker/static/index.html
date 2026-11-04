@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hierarchical Badge Foundry</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>Hierarchical Badge Foundry</h1>
+      <span id="userSubtitle">Declarative YAML Skill Trees • Multi-Category Filtering</span>
+    </div>
+    <div class="filter-bar">
+      <div class="select-group">
+        <label for="userSelect">User:</label>
+        <select id="userSelect" onchange="onUserChange(this.value)"></select>
+      </div>
+      <div class="select-group">
+        <label for="categorySelect">Category:</label>
+        <select id="categorySelect" onchange="onCategoryChange(this.value)"></select>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section>
+      <div class="toolbar">
+        <span class="toolbar-hint">Click any caret (▼/▶) to fold sub-goals into parent milestones</span>
+        <div class="toolbar-group">
+          <button class="btn-subtle" onclick="expandAll()">Expand All</button>
+          <button class="btn-subtle" onclick="collapseBranchesOnly()">Fold Sub-Goals (Show Branches)</button>
+          <button class="btn-subtle" onclick="collapseAllRoots()">Fold All to Root</button>
+        </div>
+      </div>
+      <div id="treesContainer"></div>
+    </section>
+
+    <aside id="inspectorPanel" class="inspector">
+      <p class="inspector-placeholder">Select any badge node to inspect tactical advice and log progress.</p>
+    </aside>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

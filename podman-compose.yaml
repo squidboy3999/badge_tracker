@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  badge-tracker:
+    build:
+      context: .
+      dockerfile: Containerfile
+    container_name: badge-tracker
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/app/src:Z
+      - ./tests:/app/tests:Z
+      - ./data:/app/data:Z
+    environment:
+      - DATA_DIR=/app/data
+      - DEFAULT_USER=base_user
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped

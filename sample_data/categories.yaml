@@ -1,0 +1,11 @@
+categories:
+  - id: architecture
+    label: "Software Architecture"
+  - id: devops
+    label: "Containers & DevOps"
+  - id: testing
+    label: "Testing & Quality"
+  - id: fitness
+    label: "Physical Conditioning"
+  - id: outdoors
+    label: "Outdoors & Navigation"

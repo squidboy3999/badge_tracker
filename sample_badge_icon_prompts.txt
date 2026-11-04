@@ -1,0 +1,112 @@
+#### Self-Contained Prompts (`early_reader`)
+
+* **`story_explorer.png`** (`early_reader_mastery` — Root)
+> **Prompt:** `RPG achievement badge icon, ornate double-rimmed bright gold and sapphire hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a magical open storybook with a miniature glowing castle, a golden compass rose, and swirling stardust rising from the pages. Master-tier emblem, whimsical stylized vector art with clean cel-shaded lighting, rich metallic rim highlights, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`sound_detective.png`** (`phonics_foundations` — Branch Header)
+> **Prompt:** `RPG achievement badge icon, polished brass and teal hexagonal crest frame, dark slate background (#1e293b). Centered emblem of an antique detective's brass magnifying glass examining a glowing cyan and gold soundwave ripple that sparkles with tiny musical chime stars. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`letter_safari.png`** (`alphabet_sounds` — Leaf, Counter: 26)
+> **Prompt:** `RPG achievement badge icon, bronze and emerald hexagonal crest frame, dark slate background (#1e293b). Centered emblem of an explorer's safari pith helmet and brass binoculars resting beside three colorful carved wooden blocks nestled among lush tropical jungle leaves. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`rhyme_time.png`** (`rhyme_time` — Leaf, Counter: 10)
+> **Prompt:** `RPG achievement badge icon, bronze and sky-blue hexagonal crest frame, dark slate background (#1e293b). Centered emblem of two colorful cheerful songbirds perched facing each other on a blossoming branch, singing harmonious golden sound rings toward two chiming brass bells. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`cvc_blender.png`** (`cvc_blender` — Leaf, Counter: 20)
+> **Prompt:** `RPG achievement badge icon, bronze and gold hexagonal crest frame, dark slate background (#1e293b). Centered emblem of three glowing interlocking puzzle-piece gemstones—one ruby red, one warm amber, and one emerald green—snapping together with a bright burst of golden light at the seams. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`word_wizard.png`** (`word_power` — Branch Header)
+> **Prompt:** `RPG achievement badge icon, silver and royal purple hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a pointed indigo wizard hat decorated with golden stars and a glowing crystal-tipped wand casting a spiral of magic over a parchment scroll. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`sight_words.png`** (`heart_sight_words` — Leaf, Counter: 25)
+> **Prompt:** `RPG achievement badge icon, silver and rose-gold hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a brilliant-cut ruby heart gemstone with small feathered golden wings, hovering inside a warm halo of starlight. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`digraph_spotter.png`** (`digraph_spotter` — Leaf, Counter: 10)
+> **Prompt:** `RPG achievement badge icon, silver and amethyst hexagonal crest frame, dark slate background (#1e293b). Centered emblem of two cute, friendly miniature dragons—one cyan and one orange—touching paws in the center to create a single bright golden star flame above them. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`book_adventurer.png`** (`book_adventurer` — Branch Header)
+> **Prompt:** `RPG achievement badge icon, burnished gold and crimson hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a red leather-bound adventure tome with golden eagle wings spread wide, soaring above sunlit mountain peaks. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`ten_books.png`** (`decodable_books` — Leaf, Counter: 10)
+> **Prompt:** `RPG achievement badge icon, pewter and gold hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a neat, celebratory tower of ten colorful leather-bound books stacked high with a shining golden crown resting on the top volume. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`story_predictor.png`** (`story_reteller` — Leaf, Counter: 5)
+> **Prompt:** `RPG achievement badge icon, pewter and gold hexagonal crest frame, dark slate background (#1e293b). Centered emblem of an ornate brass-mounted crystal ball glowing with a swirling nebula that reveals a winding golden adventure path splitting into two sunny horizons. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`bedtime_streak.png`** (`bedtime_streak` — Leaf, Counter: 14)
+> **Prompt:** `RPG achievement badge icon, pewter and midnight-gold hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a warm golden crescent moon cradling a cozy lit reading lantern, surrounded by a constellation arc of fourteen twinkling stars. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+#### Self-Contained Prompts (`sandia_adventurer`)
+
+* **`sandia_crest.png`** (`sandia_mountain_adventurer` — Root)
+> **Prompt:** `RPG achievement badge icon, ornate double-rimmed turquoise, copper, and gold hexagonal crest frame, dark slate background (#1e293b). Centered emblem of the rugged Sandia Mountains escarpment glowing watermelon-pink and coral at sunset, with a tiny red aerial tramway car ascending toward the high rocky crest above desert yucca. Master-tier emblem, stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`foothills_explorer.png`** (`foothills_and_canyons` — Branch Header)
+> **Prompt:** `RPG achievement badge icon, burnished copper and terracotta hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a winding red-dirt singletrack trail weaving between weathered pink granite boulders, prickly pear cactus, and blooming cane cholla under a bright turquoise sky. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`elena_gallegos.png`** (`elena_gallegos_loop` — Leaf)
+> **Prompt:** `RPG achievement badge icon, bronze and desert-gold hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a spirited New Mexico greater roadrunner with a raised crest dashing along a trail framed by golden autumn cottonwood leaves and granite foothills. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`boulder_scramble.png`** (`embudo_piedra_lisa` — Leaf)
+> **Prompt:** `RPG achievement badge icon, bronze and granite-rose hexagonal crest frame, dark slate background (#1e293b). Centered emblem of massive, sun-warmed pink and gray speckled Sandia granite boulders stacked in a steep canyon, topped with a balanced stone trail cairn. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`cienega_stream.png`** (`cienega_nature_trail` — Leaf)
+> **Prompt:** `RPG achievement badge icon, bronze and forest-green hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a crystal-clear mountain brook tumbling over mossy limestone rocks beneath a cool canopy of Douglas fir and canyon maple leaves. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`five_hikes.png`** (`five_foothill_outings` — Leaf, Counter: 5)
+> **Prompt:** `RPG achievement badge icon, bronze and copper hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a rugged leather trail hiking boot and crossed wooden walking staff standing on a rocky outcrop, crowned by an arc of five glowing golden stars. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`crest_navigator.png`** (`high_peaks_and_ridge` — Branch Header)
+> **Prompt:** `RPG achievement badge icon, brushed silver and alpine-blue hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a dramatic 10,000-foot limestone mountain cliff edge overlooking distant valleys, framed by spruce trees and a glowing golden compass rose in the sky. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`tree_spring.png`** (`tree_spring_trail` — Leaf)
+> **Prompt:** `RPG achievement badge icon, silver and pine-green hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a steep, winding forest switchback trail climbing through tall Ponderosa pines and Engelmann spruce toward a bright sunlit mountain ridge. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`kiwanis_cabin.png`** (`kiwanis_cabin_crest` — Leaf)
+> **Prompt:** `RPG achievement badge icon, silver and limestone-gray hexagonal crest frame, dark slate background (#1e293b). Centered emblem of the historic rustic stone Kiwanis Cabin built from stacked gray limestone blocks with open wooden window frames, perched dramatically on the cliff rim of Sandia Crest at sunset. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`ten_k_trail.png`** (`ten_thousand_north` — Leaf)
+> **Prompt:** `RPG achievement badge icon, silver and amber-gold hexagonal crest frame, dark slate background (#1e293b). Centered emblem of white-barked quaking aspen trees with brilliant glowing golden autumn leaves contrasting against deep green subalpine firs along a high mountain trail. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`la_luz.png`** (`la_luz_challenge` — Leaf)
+> **Prompt:** `RPG achievement badge icon, silver and sunset-crimson hexagonal crest frame, dark slate background (#1e293b). Centered emblem of towering, jagged pink-granite cathedral spires and steep rock talus switchbacks ascending into a glowing golden mountain summit. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`trail_naturalist.png`** (`trail_naturalist` — Branch Header)
+> **Prompt:** `RPG achievement badge icon, antique brass and turquoise hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a leather naturalist's field journal crossed with a brass hand lens, a Ponderosa pine cone, and a spiral fossil shell. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`daypack_ready.png`** (`ten_essentials_pack` — Leaf, Counter: 3)
+> **Prompt:** `RPG achievement badge icon, pewter and olive-green hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a well-packed canvas mountain daypack with a stainless water bottle in the side pocket, an orange safety whistle, and a small first-aid cross patch. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`fossil_spotter.png`** (`limestone_fossil_hunter` — Leaf, Counter: 3)
+> **Prompt:** `RPG achievement badge icon, pewter and cyan hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a fractured gray Madera limestone rock face revealing ancient marine fossils—ribbed crinoid stem segments, a ridged brachiopod shell, and lacy coral—highlighted with a subtle golden shimmer. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+* **`wildlife_spotter.png`** (`flora_fauna_id` — Leaf, Counter: 5)
+> **Prompt:** `RPG achievement badge icon, pewter and cobalt-blue hexagonal crest frame, dark slate background (#1e293b). Centered emblem of a vibrant cobalt-blue and black-crested Steller's Jay perched on a cinnamon-barked Ponderosa pine branch beside a prickly pine cone. Stylized vector art with clean cel-shaded lighting, no text, no letters, crisp edges, game UI asset, 1:1 square aspect ratio.`
+
+
+

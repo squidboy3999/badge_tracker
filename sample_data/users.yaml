@@ -1,0 +1,12 @@
+default_user: developer
+
+users:
+  - id: developer
+    name: "Developer"
+    description: "Systems Architecture, Containers & Automated Testing"
+  - id: explorer
+    name: "Explorer"
+    description: "Outdoor Conditioning, Trail Navigation & Endurance"
+  - id: team
+    name: "Team Shared"
+    description: "Collaborative Project & Release Milestones"
