@@ -1,0 +1,84 @@
+users:
+  - AppMaker
+categories:
+  - devops
+  - software_dev
+
+trees:
+  - id: argocd_gitops_mastery
+    title: "ArgoCD & Declarative GitOps"
+    description: "Manage OpenShift workloads declaratively using Git as the single source of truth, automated drift reconciliation, and Kustomize overlays."
+    advice: "In a GitOps workflow, 'oc edit' or 'oc apply' against a managed namespace is an anti-pattern. Every state change flows through a Git commit and an ArgoCD sync cycle."
+    badge: "argocd_master.png"
+    rule: "all"
+    children:
+      - id: first_gitops_application
+        title: "Hello World GitOps & Application CRD"
+        description: "Deploy your first Git-backed application and inspect how ArgoCD maps a Git folder to an OpenShift namespace."
+        advice: "An ArgoCD 'Application' is itself just a Kubernetes Custom Resource (CRD) living in the 'openshift-gitops' or 'argocd' namespace. Manage Applications as YAML code rather than clicking in the UI."
+        badge: "gitops_app.png"
+        rule: "all"
+        children:
+          - id: argocd_auth_and_context
+            title: "ArgoCD CLI & UI Session Setup"
+            description: "Retrieve the OpenShift GitOps / ArgoCD route URL, log in via SSO or admin secret, and authenticate the 'argocd' CLI ('argocd app list')."
+            advice: "You can manage ArgoCD entirely through 'oc' as well: run 'oc get applications.argoproj.io -n openshift-gitops' to view all GitOps apps as native Kubernetes objects."
+            badge: "argocd_login.png"
+
+          - id: hello_guestbook_deploy
+            title: "Declarative 'Application' CRD Deployment"
+            description: "Apply an 'Application' YAML manifest pointing to a Hello World repository (such as 'argoproj/argocd-example-apps' -> 'guestbook') targeting a new namespace."
+            advice: "Include 'syncOptions: [CreateNamespace=true]' in your Application spec so ArgoCD provisions the target project automatically."
+            badge: "guestbook_app.png"
+
+          - id: resource_tree_health_check
+            title: "Resource Tree & Health Status Inspection"
+            description: "Inspect the live Resource Tree in the ArgoCD UI and CLI ('argocd app get guestbook') to verify SyncStatus is 'Synced' and HealthStatus is 'Healthy'."
+            advice: "Notice how ArgoCD tracks both top-level resources ( present in Git) and dynamically generated child resources (ReplicaSets, Pods, Endpoints)."
+            badge: "health_tree.png"
+
+      - id: drift_and_reconciliation
+        title: "Drift Detection, Self-Healing & Pruning"
+        description: "Test the core GitOps control loop by inducing manual cluster drift and watching ArgoCD restore desired state."
+        advice: "Always understand the difference between 'prune' (deleting cluster objects removed from Git) and 'selfHeal' (reverting manual 'oc' edits made directly on the cluster)."
+        badge: "drift_control.png"
+        rule: "all"
+        children:
+          - id: manual_drift_detection
+            title: "Trigger & Inspect 'OutOfSync' Drift"
+            description: "Manually scale your GitOps-managed deployment on the cluster ('oc scale deploy/guestbook-ui --replicas=3') and inspect the live diff in ArgoCD ('argocd app diff')."
+            advice: "With manual sync enabled, ArgoCD flags the Deployment yellow ('OutOfSync') and highlights the exact line diff between live cluster state and the Git commit."
+            badge: "drift_diff.png"
+
+          - id: automated_self_heal
+            title: "Automated Sync, Prune & Self-Heal"
+            description: "Enable 'automated: { prune: true, selfHeal: true }' on your Application spec, manually delete a Service or alter a replica count via 'oc', and watch ArgoCD heal it within seconds."
+            advice: "Test this 3 times with different mutations (replica count, label edit, service deletion) to build intuition for how the reconciliation loop behaves."
+            badge: "self_heal.png"
+            target: 3
+
+          - id: git_rollback_drill
+            title: "Git Revert & Revision Rollback"
+            description: "Commit a change to a ConfigMap or image tag in Git, sync it, and then practice rolling back by reverting the Git commit."
+            advice: "While 'argocd app rollback' exists for emergencies, you must disable automated sync first—otherwise ArgoCD will immediately re-sync to HEAD! Reverting in Git is the cleanest rollback."
+            badge: "git_rollback.png"
+
+      - id: multi_env_and_waves
+        title: "Kustomize Overlays & Sync Waves"
+        description: "Structure repositories for Dev/Prod promotion and control resource startup ordering with hooks and waves."
+        advice: "Never duplicate full YAML manifests across Dev, Staging, and Prod folders. Keep a single 'base/' directory and apply thin Kustomize patches per environment."
+        badge: "kustomize_waves.png"
+        rule: "all"
+        children:
+          - id: kustomize_dev_prod_overlays
+            title: "Base & Overlay Environment Split"
+            description: "Deploy 2 ArgoCD Applications ('hello-dev' and 'hello-prod') pointing to 'overlays/dev' (1 replica) and 'overlays/prod' (3 replicas) of the same Kustomize base."
+            advice: "Verify your overlay output locally anytime with 'oc kustomize overlays/prod' before pushing to Git."
+            badge: "kustomize_split.png"
+            target: 2
+
+          - id: sync_waves_and_hooks
+            title: "Ordered Rollout with Sync Waves & PreSync Jobs"
+            description: "Add 'argocd.argoproj.io/sync-wave' annotations ('-1', '0', '1') and a 'PreSync' Job hook (e.g., a BusyBox schema-check job) so prerequisites complete before the app deploys."
+            advice: "ArgoCD waits for all resources in wave -1 to report Healthy before applying wave 0. This is ideal for running database migrations or seeding secrets before pods start."
+            badge: "sync_waves.png"

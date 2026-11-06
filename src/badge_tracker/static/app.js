@@ -359,7 +359,12 @@ function renderInspector() {
 
   panel.innerHTML = `
     <div class="inspector-header">
-      <img class="inspector-badge ${node.completed ? '' : 'locked'}" src="${badgeUrl(node)}" alt="${node.title}" />
+      <img class="inspector-badge ${node.completed ? '' : 'locked'}"
+           src="${badgeUrl(node)}"
+           alt="${node.title}"
+           title="Click to view large badge"
+           onclick="openBadgeZoom()" />
+      <button type="button" class="zoom-btn" onclick="openBadgeZoom()">Enlarge Badge</button>
       <h2 style="font-size:1.2rem;">${node.title}</h2>
       <span style="font-size:0.78rem;color:var(--muted);margin-top:0.2rem;">${statusText}</span>
       <code style="font-size:0.72rem;color:var(--muted);margin-top:0.25rem;">data/badges/${node.badge_dir}/${node.badge}</code>
@@ -378,6 +383,41 @@ function renderInspector() {
       <button style="width:100%;background:#334155;color:var(--text);" onclick="saveNote('${node.id}')">Save Reflection</button>
     </div>
   `;
+}
+
+function openBadgeZoom() {
+  const node = nodeIndex[selectedGoalId];
+  if (!node) return;
+
+  const dialog = document.getElementById("badgeDialog");
+  const img = document.getElementById("dialogBadgeImg");
+  const title = document.getElementById("dialogBadgeTitle");
+  const path = document.getElementById("dialogBadgePath");
+
+  img.src = badgeUrl(node);
+  img.alt = node.title;
+  title.textContent = node.title;
+  path.textContent = `data/badges/${node.badge_dir}/${node.badge}`;
+
+  if (typeof dialog.showModal === "function") {
+    dialog.showModal();
+  } else {
+    window.open(badgeUrl(node), "_blank");
+  }
+}
+
+function closeBadgeZoom() {
+  const dialog = document.getElementById("badgeDialog");
+  if (dialog && dialog.open) {
+    dialog.close();
+  }
+}
+
+function handleDialogBackdropClick(event) {
+  const dialog = document.getElementById("badgeDialog");
+  if (event.target === dialog) {
+    dialog.close();
+  }
 }
 
 fetchTrees();

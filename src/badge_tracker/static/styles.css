@@ -375,13 +375,33 @@ button:hover {
 }
 
 .inspector-badge {
-  width: 96px;
-  height: 96px;
-  margin-bottom: 0.75rem;
+  width: 108px;
+  height: 108px;
+  margin-bottom: 0.5rem;
+  cursor: zoom-in;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.inspector-badge:hover {
+  transform: scale(1.06);
 }
 
 .inspector-badge.locked {
   filter: grayscale(100%) opacity(0.4);
+}
+
+.zoom-btn {
+  background: #0f172a;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  border-radius: 99px;
+  margin-bottom: 0.65rem;
+}
+
+.zoom-btn:hover {
+  border-color: var(--accent);
 }
 
 .advice-box {
@@ -454,4 +474,77 @@ button:hover {
   padding: 2.5rem;
   text-align: center;
   color: var(--muted);
+}
+
+/* Native HTML5 <dialog> Lightbox */
+.badge-dialog {
+  margin: auto;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0;
+  max-width: 520px;
+  width: 92vw;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+}
+
+.badge-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+.dialog-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dialog-top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.dialog-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dialog-close-btn {
+  background: #0f172a;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+}
+
+.dialog-close-btn:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.dialog-badge-img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.dialog-badge-path {
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: #0f172a;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
 }

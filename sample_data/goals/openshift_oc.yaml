@@ -1,0 +1,97 @@
+users:
+  - AppMaker
+categories:
+  - devops
+  - software_dev
+
+trees:
+  - id: openshift_oc_mastery
+    title: "OpenShift CLI & Object Navigator"
+    description: "Master the 'oc' command-line workflow, Kubernetes resource hierarchies, Security Context Constraints (SCCs), and live cluster debugging."
+    advice: "Treat 'oc' as both a surgical inspection tool and a declarative manifest generator. Always prefer '--dry-run=client -o yaml' over writing boilerplate from scratch."
+    badge: "oc_navigator.png"
+    rule: "all"
+    children:
+      - id: project_and_workload_basics
+        title: "Projects, Workloads & SCC Mechanics"
+        description: "Create isolated namespaces, deploy unprivileged 'Hello World' workloads, and inspect how OpenShift enforces container security."
+        advice: "Unlike vanilla Kubernetes, OpenShift's 'restricted-v2' SCC runs containers as an arbitrary high UID by default. Standard root-bound images will fail unless built for arbitrary UIDs."
+        badge: "workload_basics.png"
+        rule: "all"
+        children:
+          - id: oc_project_context
+            title: "Project Isolation & Context Switching"
+            description: "Authenticate with 'oc whoami', create a sandbox project ('oc new-project hello-oc'), and inspect your active context."
+            advice: "An OpenShift Project wraps a Kubernetes Namespace with pre-configured RBAC and default SCC annotations. Run 'oc get namespace hello-oc -o yaml' to see the injected UID range annotations."
+            badge: "project_context.png"
+
+          - id: hello_deployment_hierarchy
+            title: "The Deployment Object Chain"
+            description: "Deploy an unprivileged hello-world image ('oc create deployment hello-web --image=registry.access.redhat.com/ubi9/httpd-24') and trace the OwnerReferences from Deployment -> ReplicaSet -> Pod."
+            advice: "Run 'oc get all' and then 'oc get pod <pod-name> -o yaml | grep -A 10 ownerReferences' to see how controllers link parent-child lifecycles."
+            badge: "deployment_chain.png"
+
+          - id: scc_uid_inspection
+            title: "Verify Arbitrary UID & SCC Assignment"
+            description: "Exec into 3 running pods ('oc exec <pod> -- id') and inspect which Security Context Constraint was applied by admission control."
+            advice: "Check the pod's applied SCC with: oc get pod <pod-name> -o jsonpath='{.metadata.annotations.openshift\\.io/scc}'."
+            badge: "scc_verify.png"
+            target: 3
+
+          - id: dry_run_manifest_gen
+            title: "Declarative Dry-Run Generation"
+            description: "Generate 5 clean YAML manifests (Deployment, Service, ConfigMap, Secret, Quota) using '--dry-run=client -o yaml' without touching the API server."
+            advice: "Pipe dry-run output directly into git-tracked files: oc create deploy demo --image=nginx --dry-run=client -o yaml > deploy.yaml."
+            badge: "dry_run_yaml.png"
+            target: 5
+
+      - id: config_networking_storage
+        title: "ConfigMaps, Services, Routes & Storage"
+        description: "Decouple configuration from container images and expose internal cluster services to external HTTPS traffic."
+        advice: "A Service provides stable internal cluster DNS and virtual IP load-balancing; an OpenShift Route binds that Service to the HAProxy Ingress Router for external access."
+        badge: "networking_storage.png"
+        rule: "all"
+        children:
+          - id: configmap_volume_inject
+            title: "Hello World ConfigMap Injection"
+            description: "Create a ConfigMap containing a custom 'index.html' ('Hello from OpenShift ConfigMap!') and mount it into your httpd/nginx deployment using 'oc set volume'."
+            advice: "Run: oc create configmap custom-html --from-literal=index.html='<h1>Hello OpenShift</h1>' and mount it with 'oc set volume deploy/hello-web --add --name=html --type=configmap --configmap-name=custom-html --mount-path=/var/www/html'."
+            badge: "configmap_mount.png"
+
+          - id: service_and_edge_route
+            title: "Expose Service & TLS Edge Route"
+            description: "Expose your deployment internally with 'oc expose deploy/hello-web --port=8080' and externally with 'oc create route edge', then curl the live HTTPS URL."
+            advice: "Use 'oc get route hello-web -o jsonpath={.spec.host}' to grab the external hostname and verify TLS termination at the router edge."
+            badge: "tls_route.png"
+
+          - id: pvc_stateful_mount
+            title: "PersistentVolumeClaim (PVC) Lifecycle"
+            description: "Attach a 1Gi ReadWriteOnce PVC to a deployment ('oc set volume --add --type=pvc --claim-size=1Gi'), write a timestamp file inside the mount, delete the pod, and verify the file survives."
+            advice: "Watch the dynamic provisioner bind the storage in real time with 'oc get pvc -w'."
+            badge: "pvc_storage.png"
+
+      - id: observability_and_triage
+        title: "Triage, Debugging & Resource Queries"
+        description: "Diagnose crashing workloads, inspect API schemas on the fly, and debug nodes or pods without modifying production specs."
+        advice: "When a workload fails to start, check 'oc get events --sort-by=.lastTimestamp' before reading container logs—image pull errors, quota blocks, and PVC mount failures happen before the container ever boots."
+        badge: "cluster_triage.png"
+        rule: "all"
+        children:
+          - id: oc_explain_explorer
+            title: "API Schema Discovery with 'oc explain'"
+            description: "Use 'oc explain' (including '--recursive') to look up 5 Kubernetes/OpenShift resource specs (e.g., pod.spec.securityContext, route.spec.tls) directly from the cluster's OpenAPI schema."
+            advice: "'oc explain' queries the exact API version running on your cluster, making it faster and more accurate than searching external docs."
+            badge: "oc_explain.png"
+            target: 5
+
+          - id: oc_debug_ephemeral
+            title: "Non-Destructive 'oc debug' Clone"
+            description: "Fix a broken deployment (e.g., a bad entrypoint or failing readiness probe) by launching an interactive debug clone ('oc debug deploy/hello-web') with its command overridden to '/bin/sh'."
+            advice: "'oc debug' spins up an exact copy of the pod with probes stripped and entrypoint overridden so you can inspect the filesystem even when the real pod is in CrashLoopBackOff."
+            badge: "oc_debug.png"
+
+          - id: jsonpath_and_portforward
+            title: "JSONPath Queries & Local Port-Forward"
+            description: "Test a pod directly bypassing the Route/Service layer via 'oc port-forward', and extract pod IP/Node mappings across a namespace using '-o custom-columns' or '-o jsonpath'."
+            advice: "Try: oc get pods -o custom-columns=NAME:.metadata.name,IP:.status.podIP,NODE:.spec.nodeName."
+            badge: "jsonpath_query.png"

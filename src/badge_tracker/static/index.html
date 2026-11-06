@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hierarchical Badge Foundry</title>
-  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="stylesheet" href="/static/styles.css?v=2" />
 </head>
 <body>
   <header>
@@ -42,6 +42,18 @@
     </aside>
   </main>
 
-  <script src="/static/app.js"></script>
+  <!-- Native HTML5 Dialog: hidden by the browser by default until .showModal() is called -->
+  <dialog id="badgeDialog" class="badge-dialog" onclick="handleDialogBackdropClick(event)">
+    <div class="dialog-content">
+      <div class="dialog-top-bar">
+        <span id="dialogBadgeTitle" class="dialog-title"></span>
+        <button type="button" class="dialog-close-btn" onclick="closeBadgeZoom()">Close (Esc)</button>
+      </div>
+      <img id="dialogBadgeImg" class="dialog-badge-img" src="" alt="" />
+      <code id="dialogBadgePath" class="dialog-badge-path"></code>
+    </div>
+  </dialog>
+
+  <script src="/static/app.js?v=2"></script>
 </body>
 </html>
